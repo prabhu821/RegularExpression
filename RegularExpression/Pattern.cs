@@ -16,6 +16,8 @@ namespace RegularExpression
         public static string Password = "^[a-z]{8,}$";
         public static string Password2 = "^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z]).*$";
         public static string Password3 = "^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).*$";
+        public static string Password4 = "^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
+
 
 
         //UC1-FIRST NAME
@@ -106,6 +108,19 @@ namespace RegularExpression
             else
             {
                 Console.WriteLine("Minimum 8 characters and Should have at least 1 Upper Case and 1 Numeric number");
+            }
+        }
+
+        //UC8-PASSWORD RULE 4
+        public void validatePassword4(string password)
+        {
+            if (Regex.IsMatch(password, Password4))
+            {
+                Console.WriteLine("Password : " + password);
+            }
+            else
+            {
+                Console.WriteLine("Minimum 8 characters and Should have at least 1 Upper Case and 1 Numeric number and has exactly 1 special character");
             }
         }
     }

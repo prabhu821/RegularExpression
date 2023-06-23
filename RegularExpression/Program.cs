@@ -10,7 +10,7 @@
             while (flag)
             {
                 Console.WriteLine("\nEnter option to choose \n1.First Name \n2.Last Name \n3.Email \n4.Mobile Number \n5.Password Rule 1" +
-                    "\n6.Exit");
+                    "\n6.Password Rule 2 \n7.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -38,6 +38,11 @@
                         Console.WriteLine("\nEnter Password");
                         string password = Console.ReadLine();
                         pattern.validatePassword(password);
+                        break;
+                    case 6:
+                        Console.WriteLine("\nEnter Password");
+                        string password2 = Console.ReadLine();
+                        pattern.validatePassword2(password2);
                         break;
                     default:
                         flag = false;

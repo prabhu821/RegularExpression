@@ -17,6 +17,7 @@ namespace RegularExpression
         public static string Password2 = "^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z]).*$";
         public static string Password3 = "^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).*$";
         public static string Password4 = "^.*(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
+        public static string EmailCheck = "^[A-Za-z]{3}([+.-])?([0-9]{3})?[@][A-Za-z0-9]+[.][a-z]{3}([.][a-z]{2,})?$";
 
 
 
@@ -121,6 +122,19 @@ namespace RegularExpression
             else
             {
                 Console.WriteLine("Minimum 8 characters and Should have at least 1 Upper Case and 1 Numeric number and has exactly 1 special character");
+            }
+        }
+
+        //UC9-SAMPLE EMAILS
+        public void CheckEmail(string email)
+        {
+            if (Regex.IsMatch(email, EmailCheck))
+            {
+                Console.WriteLine("Email Address : " + email);
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid email address");
             }
         }
     }
